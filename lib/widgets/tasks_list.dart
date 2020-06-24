@@ -26,6 +26,15 @@ class _TasksListState extends State<TasksList> {
               },
               onLongPressCallback: () {
                 taskData.deleteTask(task);
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      'Task deleted!',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    backgroundColor: Colors.lightBlue,
+                  ),
+                );
               },
             );
           },
